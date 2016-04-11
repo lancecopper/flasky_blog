@@ -48,19 +48,19 @@ class ProductionConfig(Config):
 
         # send error to administrater via email
         import logging
-        from logging.handler import SMTPHandler
+        from logging.handlers import SMTPHandler
         credentials = None
         secure = None
         if getattr(cls, "MAIL_USERNAME", None) is not None:
-            credentials = (cls.MAIL_USERNAME, cls, MAIL_PASSWORD)
+            credentials = (cls.MAIL_USERNAME, cls.MAIL_PASSWORD)
             if getattr(cls, "MAIL_USE_TLS", None):
                 secure = ()
         mail_handler = SMTPHandler(
-            mailhost=(cls,MAIL_SERVER, cls.MAIL_PORT),
+            mailhost=(cls.MAIL_SERVER, cls.MAIL_PORT),
             fromaddr=cls.FLASKY_MAIL_SENDER,
-            toaddr=[cls.FLASKY_ADMIN],
+            toaddrs=[cls.FLASKY_ADMIN],
             subject=cls.FLASKY_MAIL_SUBJECT_PREFIX + ' Application Error',
-            credentials=credentails,
+            credentials=credentials,
             secure=secure)
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
@@ -82,6 +82,6 @@ config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,
-    'default': DevelopmentConfig
+    'default': HerokuConfig,
     'heroku': HerokuConfig
 }
