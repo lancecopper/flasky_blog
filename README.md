@@ -40,12 +40,11 @@ Now you can visit the blog at [heroku](https://lance-flasky-blog.herokuapp.com.)
 8.Gravatar 是一个行业领先的头像服务,能把头像和电子邮件地址关联起来
 
 9.有多个 Python 包可用于生成虚拟信息,其中功能相对完善的是 ForgeryPy
-
 10.使用 Markdown 和 Flask-PageDown支持富文本文章
->*PageDown:使用 JavaScript 实现的客户端 Markdown 到 HTML 的转换程序。
->*Flask-PageDown:为 Flask 包装的 PageDown,把 PageDown 集成到 Flask-WTF 表单中。
->*Markdown:使用 Python 实现的服务器端 Markdown 到 HTML 的转换程序。
->*Bleach:使用 Python 实现的 HTML 清理器。
+*PageDown:使用 JavaScript 实现的客户端 Markdown 到 HTML 的转换程序。
+*Flask-PageDown:为 Flask 包装的 PageDown,把 PageDown 集成到 Flask-WTF 表单中。
+*Markdown:使用 Python 实现的服务器端 Markdown 到 HTML 的转换程序。
+*Bleach:使用 Python 实现的 HTML 清理器。
 
 11.使用HTTPie测试 Web 服务
 
