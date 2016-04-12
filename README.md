@@ -43,13 +43,13 @@ Now you can visit the blog at [heroku](https://lance-flasky-blog.herokuapp.com.)
 
 10. 使用 Markdown 和 Flask-PageDown支持富文本文章
 
-* PageDown:使用 JavaScript 实现的客户端 Markdown 到 HTML 的转换程序。
+> * PageDown:使用 JavaScript 实现的客户端 Markdown 到 HTML 的转换程序。
 
-* Flask-PageDown:为 Flask 包装的 PageDown,把 PageDown 集成到 Flask-WTF 表单中。
+> * Flask-PageDown:为 Flask 包装的 PageDown,把 PageDown 集成到 Flask-WTF 表单中。
 
-* Markdown:使用 Python 实现的服务器端 Markdown 到 HTML 的转换程序。
+> * Markdown:使用 Python 实现的服务器端 Markdown 到 HTML 的转换程序。
 
-* Bleach:使用 Python 实现的 HTML 清理器。
+> * Bleach:使用 Python 实现的 HTML 清理器。
 
 11. 使用HTTPie测试 Web 服务
 
