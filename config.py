@@ -19,6 +19,8 @@ class Config:
     FLASKY_COMMENTS_PER_PAGE = 20
     FLASKY_FOLLOWERS_PER_PAGE = 20
     FLASKY_SLOW_DB_QUERY_TIME = 0.5
+    SSL_DISABLE = True
+
 
     @staticmethod
     def init_app(app):
@@ -66,9 +68,15 @@ class ProductionConfig(Config):
         app.logger.addHandler(mail_handler)
 
 class HerokuConfig(ProductionConfig):
+    SSL_DISABLE = bool(os.environ.get('SSL_DISABLE'))
+
     @classmethod
     def init_app(cls, app):
         ProductionConfig.init_app(app)
+
+        # deal with proxy server header
+        from werkzeug.contrib.fixers import ProxyFix
+        app.wsgi_app = ProxyFix(app.wsgi_app)
 
         #output to stderr
         import logging
@@ -82,6 +90,6 @@ config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,
-    'default': HerokuConfig,
+    'default': DevelopmentConfig,
     'heroku': HerokuConfig
 }
