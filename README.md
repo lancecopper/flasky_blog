@@ -55,3 +55,10 @@ Now you can visit the blog at [heroku](https://lance-flasky-blog.herokuapp.com.)
 
 12. Python 提供了一个优秀的代码覆盖工具,称为 coverage幸运的是,大多数浏览器都支持自动化操作。[Selenium](http://www.seleniumhq.org/)是一个 Web 浏览器自动化工具,支持3种主要操作系统中的大多数主流 web浏览器。Selenium 的 Python 接口使用 pip 进行安装:(venv) $ pip install selenium
 
+
+
+## Problems during development.
+
+This app is using smtp mail service of 163 mailbox now. So it do not support gmail to sign up for the reason of GFW.
+
+The author have tried to use outlook mailbox instead, however an error occured which has not been work out now. The main information of the error can be found in [stackoverfloww](http://stackoverflow.com/questions/36685473/outlook-mailbox-smtpdataerror-550-delivery-result-banner).
